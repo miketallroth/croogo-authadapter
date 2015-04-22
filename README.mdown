@@ -1,0 +1,30 @@
+# AuthAdapter
+
+**AuthAdapter** is a plugin for the Croogo CMS used to demonstrate how to include a custom authentication adapter into the auth stream. It is released under [MIT License](LICENSE.txt).
+
+It is powered by the [Croogo](http://croogo.org) CMS framework.
+
+## Requirements
+  * Croogo 2.0.0+
+
+## Installation / Background
+
+This plugin is not specifically installable, rather it is a template demonstrating how you could include your custom authentication adapter into the Croogo auth stream. Croogo uses CakePHP's AuthComponent for authentication and authorization. That component allows any number of adapters to be utilized in series. Croogo utilizes CookieAuthenticate and either FormAuthenticate or MultiColumnAuthenticate for authentication and AclCachedAuthorize for authorization.
+
+In order to customize this, you need to be able to inject the name of your custom adapter into the $controller->Auth->authenticate or $controller->Auth->authorize arrays. I have found a simple way to do that by implementing Croogo's Controllers.Users.before<Admin>Login event handler.
+
+There are only three files of any consequence in this plugin.
+  * Config/events.php - indicates that an event handler needs to be loaded.
+  * Event/AuthAdapterEventHandler.php defines our beforeLogin event which injects our custom adapter.
+  * Controller/Component/Auth/AuthAdapterAuthenticate.php includes the details of how we authenticate the user.
+
+## Usage
+
+  * Fork it and rename it. (Maybe something like LdapAdapter.)
+  * Rename files as necessary to keep your sanity.
+  * Insert your authentication code into the AuthAdapterAuthorize.php file.
+
+## Links
+
+  * TBD
+  * **Official website**: [https://github.com/miketallroth/croogo-authadapter](https://github.com/miketallroth/croogo-authadapter)

@@ -1,0 +1,17 @@
+{
+	"name": "AuthAdapter",
+	"description": "Template for building Authentication/Authorization Adapters",
+
+	"author": "Mike Tallroth",
+	"authorEmail": "mike.tallroth@gmail.com",
+	"authorUrl": "http://github.com/miketallroth",
+
+	"dependencies": {
+		"plugins": [
+			"acl",
+			"extensions",
+			"users",
+			"migrations"
+		]
+	}
+}
