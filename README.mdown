@@ -23,6 +23,7 @@ There are only three files of any consequence in this plugin.
   * Fork it and rename it. (Maybe something like LdapAdapter.)
   * Rename files as necessary to keep your sanity.
   * Insert your authentication code into the AuthAdapterAuthorize.php file.
+  * Enable the Plugin in the Dashboard, and it will inject your new adapter.
 
 ## Links
 
